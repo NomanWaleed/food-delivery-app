@@ -1,38 +1,268 @@
-.App {
+:root{
+    --heading-color: #971D12;
+    --para-color:#000000;
+    --bg-color-primary: #F6F6F6;
+    --bg-color-secondary: #FFE508;
+    --bg-color: #FE9C03;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+#input{
+    width: 500px;
+}
+.navbar{
+    background-color: var(--bg-color) !important;
+    color: var(--para-color) I !important;
+}
+.navbar-dark .navbar-brand {
+    color: var(--para-color);
+}
+.fas{
+    color: var(--para-color);
+}
+.dropdown-toggle::after{
+    color: var(--para-color);
+}
+.fa, .fas {
+    font-weight: 900;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0px 10px;
+}
+
+.header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("./components/assets/bg.jpg");
+    /* background-image: url(./components/assets/bg.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    color: #FFFF;
+    padding: 5%;
+  }
+  .header input{
+    background-color: initial;
+    color: #FFFF;
+    border: 2px solid white;
+  }
+  .header input::placeholder{
+    color: #e9e9e9;
+  }
+  .header input:focus{
+    background-color: initial;
+    color: #FFFF;
+    outline: none !important;
+    border: 2px solid white;
+  }
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url('./components/assets/toggle.svg') !important;
+    color: black I !important;
+    border-color: black !important;
+}
+
+footer {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  color: gray;
+  font-weight: 600;
+  /* border-top: 1px solid gray;
+  padding-top: 2%; */
+}
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+  height: 220px;
+}
+.card.h-100 {
+  border-radius: 15px !important;
+  transition: width 2s, height 4s;
+}
+.card-img, .card-img-top {
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+}
+.list-group-item small{
+  text-transform: uppercase;
+  font-size: 12px;
+  color: gray;
+}
+.price {
+  color: #105DE2;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+
+
+button.btn.btn-light.w-100.text-uppercase{
+  background-color: var(--bg-color);
+  color: var(--bg-color-primary);
+  font-weight: 600;
+  width: inherit !important;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: #000000 !important;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+  /* border: 1px solid black; */
+  /* color: white !important; */
+  font-weight: 600;
+}
+.hero{
+}
+
+
+
+
+
+
+/* Shrinking the sidebar from 250px to 80px and center aligining its content*/
+#sidebar.active {
+  min-width: 80px;
+  max-width: 80px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [strong] and vice versa*/
+#sidebar .sidebar-header strong {
+  display: none;
+}
+#sidebar.active .sidebar-header h3 {
+  display: none;
+}
+#sidebar.active .sidebar-header strong {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#sidebar ul li a {
+  text-align: left;
+}
+
+#sidebar.active ul li a {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+  margin-right:  0;
+  display: block;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+/* Same dropdown links padding*/
+#sidebar.active ul ul a {
+  padding: 10px !important;
+}
+
+/* Changing the arrow position to bottom center position, 
+ translateX(50%) works with right: 50% 
+ to accurately  center the arrow */
+#sidebar.active .dropdown-toggle::after {
+  top: auto;
+  bottom: 10px;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+
+
+@media (max-width: 768px) {
+  /* 80px and its content aligned to centre. Pushing it off the screen with the
+     negative left margin
+  */
+  #sidebar.active {
+      min-width: 80px;
+      max-width: 80px;
+      text-align: center;
+      margin-left: -80px !important;
+  }
+
+
+  /* Reappearing the sidebar on toggle button click */
+  #sidebar {
+      margin-left: 0; 
+  }
+
+
+  /* Toggling the sidebar header content, 
+     hide the big heading [h3] and showing the small heading [strong] and vice versa
+  */
+  #sidebar .sidebar-header strong {
+      display: none;
+  }
+  #sidebar.active .sidebar-header h3 {
+      display: none;
+  }
+  #sidebar.active .sidebar-header strong {
+      display: block;
+  }
+
+  /* Downsize the navigation links font size */
+  #sidebar.active ul li a {
+      padding: 20px 10px;
+      font-size: 0.85em;
+  }
+
+  #sidebar.active ul li a i {
+      margin-right:  0;
+      display: block;
+      font-size: 1.8em;
+      margin-bottom: 5px;
+  }
+
+  /* Adjust the dropdown links padding*/
+  #sidebar.active ul ul a {
+      padding: 10px !important;
+  }
+
+  /* Changing the arrow position to bottom center position, 
+    translateX(50%) works with right: 50% 
+    to accurately  center the arrow */
+  .dropdown-toggle::after {
+      top: auto;
+      bottom: 10px;
+      right: 50%;
+      -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+      transform: translateX(50%);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dashboard-data {
+  width: 60%;
+  float: right;
+  margin-top: -40% !important;
+  margin-right: 10%;
 }
-
-.App-link {
-  color: #61dafb;
+.sidebar{
+  background-color: var(--bg-color) !important;
 }
+ul.sidebar-body-menu a{
+  color: #000000 !important;
+  font-size: 20px;
+  font-weight: 600;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+input.form-control.mt-3, select.form-select, textarea#floatingTextarea {
+  border: 1px solid gray !important;
+}
+input.form-control.mt-3, select.form-select, textarea#floatingTextarea:focus{
+  border: none;
+  outline: none;
 }
